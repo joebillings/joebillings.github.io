@@ -1,5 +1,7 @@
 $theme-colors: (
-  "primary": #FB2968
+  "pichi-pink": #FB2968,
+  "pichi-blue": #1BADF8,
+  "pichi-green": #63DA38
 );
 
 @import "../node_modules/bootstrap/scss/functions";
@@ -56,23 +58,6 @@ h2 {
     font-size: 4.5rem;
 }
 
-// h1:after {
-//     content: "";
-//     display: inline-block;
-//     width: 66px;
-//     height: 56px;
-//     background: url(../resources/down-arrow.png);
-//     background-repeat: no-repeat;
-//     background-size: 66px;
-//     margin-left: -20px;
-//     margin-bottom: -10px;
-//     margin-right: -50px;
-// }
-
-// .intro {
-//     background: url("../resources/down-arrow.png");
-// }
-
 p.pitch {
     font-size: 1.1rem;
     font-weight: 400;
@@ -110,7 +95,7 @@ p.pitch {
     font-size: .7rem;
 }
 
-@media (prefers-dark-interface) { 
+@media (-webkit-prefers-dark-interface) { 
     :root {
         --back-color: #1E1F21;
         --heading-color: rgba(255,255,254, 1);
