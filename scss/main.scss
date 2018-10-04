@@ -18,7 +18,7 @@ $theme-colors: (
 :root {
     --back-color: #f9f9f9;
     --heading-color: rgba(0,0,0, .85);
-    --text-color: rgba(0,0,0, .85);
+    --text-color: rgba(0,0,0, .65);
     --pichi-pink: #FB2968;
     --pichi-blue: #1BADF8;
     --pichi-green: #63DA38;
@@ -39,21 +39,41 @@ body {
 }
 
 h1 { 
-    font-weight: 800; 
     font-size: 2.5rem;
+    font-weight: 800; 
     color: var(--heading-color);
     line-height: 1.1;
 }
 
+h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--heading-color);    
+}
+
+// Used in homepage header
 .size {
     font-size: 4.5rem;
 }
 
-h2 {
-    
-}
+// h1:after {
+//     content: "";
+//     display: inline-block;
+//     width: 66px;
+//     height: 56px;
+//     background: url(../resources/down-arrow.png);
+//     background-repeat: no-repeat;
+//     background-size: 66px;
+//     margin-left: -20px;
+//     margin-bottom: -10px;
+//     margin-right: -50px;
+// }
 
-p.intro {
+// .intro {
+//     background: url("../resources/down-arrow.png");
+// }
+
+p.pitch {
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.5;
