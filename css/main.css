@@ -4539,6 +4539,9 @@ p.pitch {
   font-weight: 700;
   font-style: italic; }
 
+.large-image {
+  border-radius: 8px; }
+
 .btn {
   font-weight: 600; }
 
