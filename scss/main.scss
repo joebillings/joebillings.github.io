@@ -85,9 +85,16 @@ p.pitch {
     letter-spacing: .012em
 }
 
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
 .header {
     background-color: var(--header-back-color);
-    transition: transform cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s, background cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
+    transition: transform cubic-bezier(0.25, 0.93, 0.38, 0.96) .45s, background cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 .header.hidden {

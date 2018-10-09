@@ -17,12 +17,12 @@
     </head>
     <body class="">
         <div class="container pr-4 pb-3 pl-4 ">
-            <div class="d-flex row align-items-center pt-3 pb-3 header sticky-top">
+            <div class="d-flex row align-items-center pt-3 pb-3 header">
                 <img src="resources/pichi-small-pichi.png" class="logo">
                 <p class="m-0 header-logotype"><strong>Pichi for Mac<span class="hi-one">.</span></strong></p>
                 <div class="ml-auto">
                     <button type="button" class="btn btn-dark dark-mode" data-toggle="button" aria-pressed="false" autocomplete="off">
-                        Dark Mode
+                        Dark Side
                     </button>
                     <button type="button" class="btn btn-pichi-pink ml-2 d-none d-md-inline-block">Download <span>↓</span></button>
                 </div>
@@ -155,15 +155,26 @@
         </div>
         <script>
             var scroll = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+            
+            if(scroll > $(".header").outerHeight())
+                $(".header").addClass("sticky-top");
+
             $(document).scroll(function(){
                 var newScroll = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
-                if(newScroll > scroll && newScroll > + $(".header").height()) {
+                if(newScroll > scroll && newScroll > + $(".header").outerHeight()) {
+                    $(".header").on("transitionend", function() {
+                        $(".header").addClass("sticky-top");
+                    });
                     $(".header").addClass("hidden");
+                    scroll = newScroll;
+                }
+                else if(newScroll === 0) {
+                    $(".header").removeClass("sticky-top");
                     scroll = newScroll;
                 }
                 else {
                     $(".header").removeClass("hidden");
-                    scroll = newScroll;
+                    scroll = newScroll;   
                 }
             });
             $(".dark-mode").click(function(e){
@@ -171,7 +182,7 @@
                     $body = $("body");
                 if($body.hasClass("dark")) {
                     $body.removeClass("dark");
-                    $this.text("Dark Mode")
+                    $this.text("Dark Side")
                         .addClass("btn-dark")
                         .removeClass("btn-light");
                     $("[data-dark-variant-available]").attr("src", function() {
@@ -180,7 +191,7 @@
                 }
                 else {
                     $body.addClass("dark");
-                    $this.text("Light Mode")
+                    $this.text("Light Side")
                         .addClass("btn-light")
                         .removeClass("btn-dark");
                     $("[data-dark-variant-available]").attr("src", function() {
