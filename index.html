@@ -159,6 +159,26 @@
             if(scroll > $(".header").outerHeight())
                 $(".header").addClass("sticky-top");
 
+            $.darkSrcsWithOptionalSetter = function(setSrc) {
+                var srcArray = [];
+                $("[data-dark-variant-available]").attr("src", function() {
+                    var src = this.src.split(".");
+                    src[src.length-2] = src[src.length-2] + "-dark";
+                    srcArray.push(src.join("."));
+                    if(setSrc)
+                        return srcArray[srcArray.length-1];
+                });
+                return srcArray;
+            }
+
+            $.preloadImages = function(imagesArray) {
+                for (var i = 0; i < imagesArray.length; i++) {
+                    $("<img />").attr("src", imagesArray[i]);
+                }
+            }
+
+            $.preloadImages($.darkSrcsWithOptionalSetter());
+
             $(document).scroll(function(){
                 var newScroll = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
                 if(newScroll > scroll && newScroll > + $(".header").outerHeight()) {
@@ -194,11 +214,12 @@
                     $this.text("Light Mode")
                         .addClass("btn-light")
                         .removeClass("btn-dark");
-                    $("[data-dark-variant-available]").attr("src", function() {
-                        var src = this.src.split(".");
-                        src[src.length-2] = src[src.length-2] + "-dark";
-                        return src.join(".");
-                    });
+                    $.darkSrcsWithOptionalSetter(true);
+                    // $("[data-dark-variant-available]").attr("src", function() {
+                    //     var src = this.src.split(".");
+                    //     src[src.length-2] = src[src.length-2] + "-dark";
+                    //     return src.join(".");
+                    // });
                 }
             });
         </script>
