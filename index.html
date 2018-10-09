@@ -22,7 +22,7 @@
                 <p class="m-0 header-logotype"><strong>Pichi for Mac<span class="hi-one">.</span></strong></p>
                 <div class="ml-auto">
                     <button type="button" class="btn btn-dark dark-mode" data-toggle="button" aria-pressed="false" autocomplete="off">
-                        Dark Side
+                        Dark Mode
                     </button>
                     <button type="button" class="btn btn-pichi-pink ml-2 d-none d-md-inline-block">Download <span>↓</span></button>
                 </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col pt-5 border-top">
-                        <h3>Turned to the dark side<span class="hi-one">?</span></h3>
+                        <h3>Turned to the Dark Mode<span class="hi-one">?</span></h3>
                         <p>Pichi has been designed with macOS Mojave in mind with a beautifaul dark interface for Dark Mode.</p>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
                     $(".header").removeClass("sticky-top");
                     scroll = newScroll;
                 }
-                else {
+                else if(newScroll != $(document).outerHeight() - $("body").outerHeight()){
                     $(".header").removeClass("hidden");
                     scroll = newScroll;   
                 }
@@ -182,7 +182,7 @@
                     $body = $("body");
                 if($body.hasClass("dark")) {
                     $body.removeClass("dark");
-                    $this.text("Dark Side")
+                    $this.text("Dark Mode")
                         .addClass("btn-dark")
                         .removeClass("btn-light");
                     $("[data-dark-variant-available]").attr("src", function() {
@@ -191,7 +191,7 @@
                 }
                 else {
                     $body.addClass("dark");
-                    $this.text("Light Side")
+                    $this.text("Light Mode")
                         .addClass("btn-light")
                         .removeClass("btn-dark");
                     $("[data-dark-variant-available]").attr("src", function() {
