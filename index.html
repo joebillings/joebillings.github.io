@@ -154,9 +154,9 @@
             </div>
         </div>
         <script>
-            var scroll = document.documentElement.scrollTop;
+            var scroll = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
             $(document).scroll(function(){
-                var newScroll = document.documentElement.scrollTop;
+                var newScroll = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
                 if(newScroll > scroll && newScroll > + $(".header").height()) {
                     $(".header").addClass("hidden");
                     scroll = newScroll;
