@@ -40,7 +40,7 @@ body {
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
-    transition: all ease-in .25s;
+    transition: all cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 body.dark {
@@ -56,21 +56,21 @@ h1 {
     font-weight: 800; 
     color: var(--heading-color);
     line-height: 1.1;
-    transition: color ease-in .25s;
+    transition: color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 h2 {
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--text-color);
-    transition: color ease-in .25s;
+    transition: color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 h3 {
     font-size: 1.7rem;
     font-weight: 800;
     color: var(--heading-color);
-    transition: color ease-in .25s;
+    transition: color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 // Used in homepage header
@@ -87,7 +87,7 @@ p.pitch {
 
 .header {
     background-color: var(--header-back-color);
-    transition: transform cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
+    transition: transform cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s, background cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 .header.hidden {
@@ -135,22 +135,22 @@ p.pitch {
 
 .border-top {
     border-top-color: var(--border-color) !important;
-    transition: border-top-color ease-in .25s;
+    transition: border-top-color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 .border-right {
     border-right-color: var(--border-color) !important;
-    transition: border-right-color ease-in .25s;
+    transition: border-right-color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 .border-bottom {
     border-bottom-color: var(--border-color) !important;
-    transition: border-bottom-color ease-in .25s;
+    transition: border-bottom-color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 .border-left {
     border-left-color: var(--border-color) !important;
-    transition: border-left-color ease-in .25s;
+    transition: border-left-color cubic-bezier(0.25, 0.93, 0.38, 0.96) .25s;
 }
 
 @media (-webkit-prefers-dark-interface) { 
