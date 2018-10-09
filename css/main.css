@@ -4476,8 +4476,10 @@ textarea.form-control {
 
 :root {
   --back-color: #f9f9f9;
+  --header-back-color: rgba(249,249,249,0.9);
   --heading-color: rgba(0,0,0, .85);
   --text-color: rgba(0,0,0, .65);
+  --border-color: #DEE2E6;
   --pichi-pink: #FB2968;
   --pichi-blue: #1BADF8;
   --pichi-green: #63DA38; }
@@ -4492,23 +4494,34 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-font-smoothing: subpixel-antialiased;
-  font-smoothing: subpixel-antialiased; }
+  font-smoothing: subpixel-antialiased;
+  transition: all ease-in .25s; }
+
+body.dark {
+  --back-color: #1E1F21;
+  --header-back-color: rgba(30,31,33,0.9);
+  --heading-color: rgba(255,255,254, 1);
+  --text-color: rgba(255,255,254, .85);
+  --border-color: #444; }
 
 h1 {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--heading-color);
-  line-height: 1.1; }
+  line-height: 1.1;
+  transition: color ease-in .25s; }
 
 h2 {
   font-size: 1.2rem;
   font-weight: 400;
-  color: var(--text-color); }
+  color: var(--text-color);
+  transition: color ease-in .25s; }
 
 h3 {
   font-size: 1.7rem;
   font-weight: 800;
-  color: var(--heading-color); }
+  color: var(--heading-color);
+  transition: color ease-in .25s; }
 
 .size {
   font-size: 4.5rem; }
@@ -4518,6 +4531,13 @@ p.pitch {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.012em; }
+
+.header {
+  background-color: var(--header-back-color);
+  transition: transform cubic-bezier(0.25, 0.93, 0.38, 0.96) 0.45s; }
+
+.header.hidden {
+  transform: translateY(-100%); }
 
 .header-logotype {
   font-size: 1.3rem; }
@@ -4547,6 +4567,22 @@ p.pitch {
 
 .header .btn {
   font-size: .7rem; }
+
+.border-top {
+  border-top-color: var(--border-color) !important;
+  transition: border-top-color ease-in .25s; }
+
+.border-right {
+  border-right-color: var(--border-color) !important;
+  transition: border-right-color ease-in .25s; }
+
+.border-bottom {
+  border-bottom-color: var(--border-color) !important;
+  transition: border-bottom-color ease-in .25s; }
+
+.border-left {
+  border-left-color: var(--border-color) !important;
+  transition: border-left-color ease-in .25s; }
 
 @media (-webkit-prefers-dark-interface) {
   :root {
