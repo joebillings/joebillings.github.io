@@ -31,7 +31,7 @@ body {
 }
 
 .body {
-  background: #fefaf0;
+  background: #fcf1d4;
 }
 
 .logo {
@@ -42,6 +42,11 @@ body {
   font-family: BrandonBld;
   color: #E42459;
   font-size: 1.5rem;
+}
+
+.primary {
+  color: #2FB6B3;
+  font-size: 2rem;
 }
 
 a:active,
@@ -99,7 +104,7 @@ h2.small {
 
 p.important {
   /*font-size: 1.4rem;*/
-  font-family: BrandonBld;
+  /*font-family: BrandonBld;*/
 }
 
 .footer {
@@ -126,8 +131,19 @@ p.important {
     font-size: 1.25rem;
     line-height: 1.9;
   }
+
   .footer p {
     font-size: 1.4rem;
     line-height: 1.4;
+  }
+
+  /*p.important {
+    font-size: 1.5rem;
+  }*/
+}
+
+@media (min-width: 992px) {
+  .primary {
+    font-size: 2.5rem;
   }
 }
