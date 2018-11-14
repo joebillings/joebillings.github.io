@@ -111,6 +111,22 @@ p.important {
   background: #38B5B2;
 }
 
+.one {
+  background: #FDD137;
+}
+
+.two {
+  background: #E42459;
+}
+
+.three {
+  background: #2FB6B3;
+}
+
+.four {
+  background: #F0998E;
+}
+
 @media (min-width: 576px) {
   h1 {
     font-size: 3.65rem;
